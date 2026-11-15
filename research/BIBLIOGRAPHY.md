@@ -58,6 +58,18 @@ record (arXiv / venue / publisher).*
 - Yuan, Z., et al. (2024). *LLM Inference Unveiled: Survey and Roofline Model Insights.* arXiv:2402.16363. — GEMM-vs-GEMV arithmetic intensity for LLM inference; batching raises intensity toward the compute roof. Dossier: `memory/memory-wall-and-roofline.md`.
 - MimirAlloc campaigns (ours, 2026). Pi campaign final gate 4,590 run / 0 failed; Z13 campaign final gate 4,988 passed / 0 failed / 77 skipped; both 117/117 slices. Records: campaign goal folders + keeper logs, mined in `memory/mimiralloc-our-own-proven-work.md`.
 
+### Agent memory architectures (memory wave 4)
+
+- Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I., & Gonzalez, J. E. (2023). *MemGPT: Towards LLMs as Operating Systems.* arXiv:2310.08560. https://arxiv.org/abs/2310.08560 — virtual context management: the model pages between main context and recall/archival stores via function calls. Dossier: `memory/agent-memory-architectures.md`.
+- Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). *Generative Agents: Interactive Simulacra of Human Behavior.* UIST '23. arXiv:2304.03442. https://arxiv.org/abs/2304.03442 — memory stream + reflection + retrieval scored recency × importance × relevance. Dossier: `memory/agent-memory-architectures.md`.
+- Zhang, Z., et al. (2024). *A Survey on the Memory Mechanism of Large Language Model based Agents.* ACM Transactions on Information Systems. arXiv:2404.13501. https://arxiv.org/abs/2404.13501 — the field's shared vocabulary: memory by what it stores and the operations on it (write, manage, read). Dossier: `memory/agent-memory-architectures.md`.
+- Sumers, T. R., Yao, S., Narasimhan, K., & Griffiths, T. L. (2024). *Cognitive Architectures for Language Agents (CoALA).* TMLR. arXiv:2309.02427. https://arxiv.org/abs/2309.02427 — working + episodic/semantic/procedural taxonomy for language agents. Dossier: `memory/agent-memory-architectures.md`.
+- Wang, G., et al. (2023). *Voyager: An Open-Ended Embodied Agent with Large Language Models.* arXiv:2305.16291. https://arxiv.org/abs/2305.16291 — procedural memory as a library of execution-verified skills. Dossier: `memory/agent-memory-architectures.md`.
+- Maharana, A., et al. (2024). *Evaluating Very Long-Term Conversational Memory of LLM Agents (LoCoMo).* ACL 2024. arXiv:2402.17753. https://arxiv.org/abs/2402.17753 — ~300-turn multi-session memory benchmark; systems lag humans worst on temporal reasoning. Dossier: `memory/agent-memory-architectures.md`.
+- Wu, D., et al. (2025). *LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory.* ICLR 2025. arXiv:2410.10813. https://arxiv.org/abs/2410.10813 — five memory abilities incl. knowledge updates; ~30% accuracy drop under sustained interaction. Dossier: `memory/agent-memory-architectures.md`.
+- Chhikara, P., et al. (2025). *Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory.* ECAI 2025. arXiv:2504.19413. https://arxiv.org/abs/2504.19413 — memory middleware: extraction + add/update/delete consolidation decisions against retrieved neighbours. Dossier: `memory/agent-memory-architectures.md`.
+- Rasmussen, P., et al. (2025). *Zep: A Temporal Knowledge Graph Architecture for Agent Memory.* arXiv:2501.13956. https://arxiv.org/abs/2501.13956 — bi-temporal graph memory (Graphiti): contradictions invalidate the old edge rather than deleting it; provenance retained. The only fully non-destructive supersession design in this set. Dossier: `memory/agent-memory-architectures.md`.
+
 ## Our own work (first-class sources)
 
 - MimirAlloc campaigns — Pi (117/117) and Z13 (117/117): repos + campaign records,
