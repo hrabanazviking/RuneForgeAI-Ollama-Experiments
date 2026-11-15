@@ -19,7 +19,12 @@ record (arXiv / venue / publisher).*
 
 ## Memory science & allocation
 
-*(populated as OR-6 dossiers land — memory wall, roofline, allocator literature first)*
+- Wulf, W. A., & McKee, S. A. (1995). *Hitting the Memory Wall: Implications of the Obvious.* ACM SIGARCH Computer Architecture News 23(1). — DRAM latency improving ~7%/yr against CPU ~80%/yr: the wall as the founding observation of memory-centric design. Dossier: `memory/memory-wall-and-roofline.md`.
+- McKee, S. A. (2004). *Reflections on the Memory Wall.* — the wall revisited a decade on. Dossier: `memory/memory-wall-and-roofline.md`.
+- Williams, S., Waterman, A., & Patterson, D. (2009). *Roofline: An Insightful Visual Performance Model for Multicore Architectures.* Communications of the ACM 52(4). — attainable performance = min(peak compute, bandwidth × arithmetic intensity); the working method for judging whether a kernel is memory-bound. Dossier: `memory/memory-wall-and-roofline.md`.
+- McCalpin, J. D. STREAM benchmark + machine-balance literature — sustained bandwidth (not peak) as the honest denominator; latency ≠ bandwidth. Dossier: `memory/memory-wall-and-roofline.md`.
+- Yuan, Z., et al. (2024). *LLM Inference Unveiled: Survey and Roofline Model Insights.* arXiv:2402.16363. — GEMM-vs-GEMV arithmetic intensity for LLM inference; batching raises intensity toward the compute roof. Dossier: `memory/memory-wall-and-roofline.md`.
+- MimirAlloc campaigns (ours, 2026). Pi campaign final gate 4,590 run / 0 failed; Z13 campaign final gate 4,988 passed / 0 failed / 77 skipped; both 117/117 slices. Records: campaign goal folders + keeper logs, mined in `memory/mimiralloc-our-own-proven-work.md`.
 
 ## Our own work (first-class sources)
 
