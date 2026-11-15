@@ -1,0 +1,237 @@
+{
+ "label": "stock-t0",
+ "base": "http://127.0.0.1:11499",
+ "model": "gemma4viking4b:latest",
+ "scenarios": {
+  "control": {
+   "turns": [
+    {
+     "scenario": "control",
+     "turn": 1,
+     "prompt_eval_count": 232,
+     "eval_count": 50,
+     "wall_s": 10.11
+    },
+    {
+     "scenario": "control",
+     "turn": 2,
+     "prompt_eval_count": 332,
+     "eval_count": 50,
+     "wall_s": 5.21
+    },
+    {
+     "scenario": "control",
+     "turn": 3,
+     "prompt_eval_count": 432,
+     "eval_count": 50,
+     "wall_s": 5.22
+    },
+    {
+     "scenario": "control",
+     "turn": 4,
+     "prompt_eval_count": 532,
+     "eval_count": 50,
+     "wall_s": 5.28
+    },
+    {
+     "scenario": "control",
+     "turn": 5,
+     "prompt_eval_count": 632,
+     "eval_count": 50,
+     "wall_s": 5.25
+    },
+    {
+     "scenario": "control",
+     "turn": 6,
+     "prompt_eval_count": 732,
+     "eval_count": 50,
+     "wall_s": 5.26
+    },
+    {
+     "scenario": "control",
+     "turn": 7,
+     "prompt_eval_count": 832,
+     "eval_count": 50,
+     "wall_s": 5.46
+    },
+    {
+     "scenario": "control",
+     "turn": 8,
+     "prompt_eval_count": 932,
+     "eval_count": 50,
+     "wall_s": 5.33
+    }
+   ],
+   "probes": [
+    {
+     "probe": "name",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 958
+    },
+    {
+     "probe": "ship",
+     "ok": true,
+     "answer": "Wave Serpent.",
+     "prompt_eval_count": 954
+    },
+    {
+     "probe": "sister",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 959
+    },
+    {
+     "probe": "food",
+     "ok": true,
+     "answer": "Cod with butter.",
+     "prompt_eval_count": 955
+    },
+    {
+     "probe": "wreck",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 961
+    },
+    {
+     "probe": "teacher",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 953
+    }
+   ],
+   "score": "2/6"
+  },
+  "overflow": {
+   "turns": [
+    {
+     "scenario": "overflow",
+     "turn": 1,
+     "prompt_eval_count": 232,
+     "eval_count": 50,
+     "wall_s": 10.59
+    },
+    {
+     "scenario": "overflow",
+     "turn": 2,
+     "prompt_eval_count": 332,
+     "eval_count": 50,
+     "wall_s": 5.27
+    },
+    {
+     "scenario": "overflow",
+     "turn": 3,
+     "prompt_eval_count": 432,
+     "eval_count": 50,
+     "wall_s": 5.35
+    },
+    {
+     "scenario": "overflow",
+     "turn": 4,
+     "prompt_eval_count": 532,
+     "eval_count": 50,
+     "wall_s": 5.38
+    },
+    {
+     "scenario": "overflow",
+     "turn": 5,
+     "prompt_eval_count": 632,
+     "eval_count": 50,
+     "wall_s": 5.41
+    },
+    {
+     "scenario": "overflow",
+     "turn": 6,
+     "prompt_eval_count": 732,
+     "eval_count": 50,
+     "wall_s": 5.39
+    },
+    {
+     "scenario": "overflow",
+     "turn": 7,
+     "prompt_eval_count": 832,
+     "eval_count": 50,
+     "wall_s": 5.4
+    },
+    {
+     "scenario": "overflow",
+     "turn": 8,
+     "prompt_eval_count": 932,
+     "eval_count": 50,
+     "wall_s": 5.43
+    },
+    {
+     "scenario": "overflow",
+     "turn": 9,
+     "prompt_eval_count": 937,
+     "eval_count": 50,
+     "wall_s": 15.25
+    },
+    {
+     "scenario": "overflow",
+     "turn": 10,
+     "prompt_eval_count": 938,
+     "eval_count": 50,
+     "wall_s": 15.33
+    },
+    {
+     "scenario": "overflow",
+     "turn": 11,
+     "prompt_eval_count": 939,
+     "eval_count": 50,
+     "wall_s": 15.31
+    },
+    {
+     "scenario": "overflow",
+     "turn": 12,
+     "prompt_eval_count": 940,
+     "eval_count": 50,
+     "wall_s": 15.39
+    }
+   ],
+   "probes": [
+    {
+     "probe": "name",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 966
+    },
+    {
+     "probe": "ship",
+     "ok": true,
+     "answer": "Wave Serpent.",
+     "prompt_eval_count": 962
+    },
+    {
+     "probe": "sister",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 967
+    },
+    {
+     "probe": "food",
+     "ok": true,
+     "answer": "Cod with butter.",
+     "prompt_eval_count": 963
+    },
+    {
+     "probe": "wreck",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 969
+    },
+    {
+     "probe": "teacher",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 961
+    }
+   ],
+   "score": "2/6"
+  },
+  "frontedit": {
+   "eval_before_edit": 432,
+   "eval_after_one_word_edit": 529
+  }
+ }
+}

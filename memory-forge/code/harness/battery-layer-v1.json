@@ -1,0 +1,237 @@
+{
+ "label": "layer-v1",
+ "base": "http://127.0.0.1:11500",
+ "model": "gemma4viking4b:latest",
+ "scenarios": {
+  "control": {
+   "turns": [
+    {
+     "scenario": "control",
+     "turn": 1,
+     "prompt_eval_count": 302,
+     "eval_count": 50,
+     "wall_s": 4.87
+    },
+    {
+     "scenario": "control",
+     "turn": 2,
+     "prompt_eval_count": 402,
+     "eval_count": 50,
+     "wall_s": 5.97
+    },
+    {
+     "scenario": "control",
+     "turn": 3,
+     "prompt_eval_count": 502,
+     "eval_count": 50,
+     "wall_s": 7.15
+    },
+    {
+     "scenario": "control",
+     "turn": 4,
+     "prompt_eval_count": 602,
+     "eval_count": 50,
+     "wall_s": 8.36
+    },
+    {
+     "scenario": "control",
+     "turn": 5,
+     "prompt_eval_count": 702,
+     "eval_count": 50,
+     "wall_s": 6.12
+    },
+    {
+     "scenario": "control",
+     "turn": 6,
+     "prompt_eval_count": 802,
+     "eval_count": 50,
+     "wall_s": 6.23
+    },
+    {
+     "scenario": "control",
+     "turn": 7,
+     "prompt_eval_count": 902,
+     "eval_count": 50,
+     "wall_s": 6.27
+    },
+    {
+     "scenario": "control",
+     "turn": 8,
+     "prompt_eval_count": 1002,
+     "eval_count": 50,
+     "wall_s": 6.34
+    }
+   ],
+   "probes": [
+    {
+     "probe": "name",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 1028
+    },
+    {
+     "probe": "ship",
+     "ok": true,
+     "answer": "Wave Serpent.",
+     "prompt_eval_count": 1024
+    },
+    {
+     "probe": "sister",
+     "ok": true,
+     "answer": "Astrid lives in Bergen and keeps three goats.",
+     "prompt_eval_count": 1029
+    },
+    {
+     "probe": "food",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 1025
+    },
+    {
+     "probe": "wreck",
+     "ok": true,
+     "answer": "The Ember Gull wrecked.",
+     "prompt_eval_count": 1031
+    },
+    {
+     "probe": "teacher",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 1023
+    }
+   ],
+   "score": "3/6"
+  },
+  "overflow": {
+   "turns": [
+    {
+     "scenario": "overflow",
+     "turn": 1,
+     "prompt_eval_count": 302,
+     "eval_count": 50,
+     "wall_s": 11.6
+    },
+    {
+     "scenario": "overflow",
+     "turn": 2,
+     "prompt_eval_count": 402,
+     "eval_count": 50,
+     "wall_s": 8.46
+    },
+    {
+     "scenario": "overflow",
+     "turn": 3,
+     "prompt_eval_count": 502,
+     "eval_count": 50,
+     "wall_s": 9.81
+    },
+    {
+     "scenario": "overflow",
+     "turn": 4,
+     "prompt_eval_count": 602,
+     "eval_count": 50,
+     "wall_s": 11.13
+    },
+    {
+     "scenario": "overflow",
+     "turn": 5,
+     "prompt_eval_count": 702,
+     "eval_count": 50,
+     "wall_s": 6.35
+    },
+    {
+     "scenario": "overflow",
+     "turn": 6,
+     "prompt_eval_count": 707,
+     "eval_count": 50,
+     "wall_s": 11.71
+    },
+    {
+     "scenario": "overflow",
+     "turn": 7,
+     "prompt_eval_count": 707,
+     "eval_count": 50,
+     "wall_s": 10.76
+    },
+    {
+     "scenario": "overflow",
+     "turn": 8,
+     "prompt_eval_count": 707,
+     "eval_count": 50,
+     "wall_s": 10.66
+    },
+    {
+     "scenario": "overflow",
+     "turn": 9,
+     "prompt_eval_count": 707,
+     "eval_count": 50,
+     "wall_s": 10.5
+    },
+    {
+     "scenario": "overflow",
+     "turn": 10,
+     "prompt_eval_count": 708,
+     "eval_count": 50,
+     "wall_s": 10.53
+    },
+    {
+     "scenario": "overflow",
+     "turn": 11,
+     "prompt_eval_count": 709,
+     "eval_count": 50,
+     "wall_s": 10.53
+    },
+    {
+     "scenario": "overflow",
+     "turn": 12,
+     "prompt_eval_count": 710,
+     "eval_count": 50,
+     "wall_s": 10.93
+    }
+   ],
+   "probes": [
+    {
+     "probe": "name",
+     "ok": true,
+     "answer": "Sigrid, from Bergen.",
+     "prompt_eval_count": 736
+    },
+    {
+     "probe": "ship",
+     "ok": true,
+     "answer": "Wave Serpent.",
+     "prompt_eval_count": 732
+    },
+    {
+     "probe": "sister",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 737
+    },
+    {
+     "probe": "food",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 733
+    },
+    {
+     "probe": "wreck",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 739
+    },
+    {
+     "probe": "teacher",
+     "ok": false,
+     "answer": "",
+     "prompt_eval_count": 731
+    }
+   ],
+   "score": "2/6"
+  },
+  "frontedit": {
+   "eval_before_edit": 502,
+   "eval_after_one_word_edit": 599
+  }
+ }
+}

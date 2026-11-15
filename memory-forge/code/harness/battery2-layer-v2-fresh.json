@@ -1,0 +1,168 @@
+{
+ "label": "layer-v2-fresh",
+ "base": "http://127.0.0.1:11500",
+ "model": "gemma4viking4b:latest",
+ "scenarios": {
+  "overflow": {
+   "turns": [
+    {
+     "turn": 1,
+     "prompt_eval_count": 341,
+     "wall_s": 12.95
+    },
+    {
+     "turn": 2,
+     "prompt_eval_count": 441,
+     "wall_s": 8.91
+    },
+    {
+     "turn": 3,
+     "prompt_eval_count": 541,
+     "wall_s": 10.43
+    },
+    {
+     "turn": 4,
+     "prompt_eval_count": 641,
+     "wall_s": 11.5
+    },
+    {
+     "turn": 5,
+     "prompt_eval_count": 687,
+     "wall_s": 12.77
+    },
+    {
+     "turn": 6,
+     "prompt_eval_count": 655,
+     "wall_s": 12.17
+    },
+    {
+     "turn": 7,
+     "prompt_eval_count": 655,
+     "wall_s": 10.74
+    },
+    {
+     "turn": 8,
+     "prompt_eval_count": 655,
+     "wall_s": 11.49
+    },
+    {
+     "turn": 9,
+     "prompt_eval_count": 655,
+     "wall_s": 11.72
+    },
+    {
+     "turn": 10,
+     "prompt_eval_count": 656,
+     "wall_s": 11.29
+    },
+    {
+     "turn": 11,
+     "prompt_eval_count": 657,
+     "wall_s": 11.3
+    },
+    {
+     "turn": 12,
+     "prompt_eval_count": 658,
+     "wall_s": 11.97
+    }
+   ],
+   "probes": [
+    {
+     "group": "S",
+     "fact": "ship",
+     "verdict": "correct",
+     "per_phrasing": [
+      "correct",
+      "empty"
+     ]
+    },
+    {
+     "group": "S",
+     "fact": "sister",
+     "verdict": "empty",
+     "per_phrasing": [
+      "empty",
+      "empty"
+     ]
+    },
+    {
+     "group": "S",
+     "fact": "food",
+     "verdict": "empty",
+     "per_phrasing": [
+      "empty",
+      "empty"
+     ]
+    },
+    {
+     "group": "S",
+     "fact": "wreck",
+     "verdict": "empty",
+     "per_phrasing": [
+      "empty",
+      "empty"
+     ]
+    },
+    {
+     "group": "S",
+     "fact": "teacher",
+     "verdict": "empty",
+     "per_phrasing": [
+      "empty",
+      "empty"
+     ]
+    },
+    {
+     "group": "H",
+     "fact": "brother",
+     "verdict": "empty",
+     "per_phrasing": [
+      "empty",
+      "empty"
+     ]
+    },
+    {
+     "group": "H",
+     "fact": "dog",
+     "verdict": "empty",
+     "per_phrasing": [
+      "empty",
+      "empty"
+     ]
+    },
+    {
+     "group": "H",
+     "fact": "mother",
+     "verdict": "empty",
+     "per_phrasing": [
+      "empty",
+      "empty"
+     ]
+    },
+    {
+     "group": "H",
+     "fact": "promise",
+     "verdict": "empty",
+     "per_phrasing": [
+      "empty",
+      "empty"
+     ]
+    }
+   ],
+   "score": {
+    "S": {
+     "correct": 1,
+     "wrong": 0,
+     "empty": 4,
+     "of": 5
+    },
+    "H": {
+     "correct": 0,
+     "wrong": 0,
+     "empty": 4,
+     "of": 4
+    }
+   }
+  }
+ }
+}
