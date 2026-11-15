@@ -7,9 +7,9 @@ usable place.
 
 ## How this library is organised
 
-The corpus holds **129 files** in total (**~5.1 MB** — 5,105,460 bytes of Markdown),
-counted 2026-11-15: 4 at the root, 30 in `runners/`, 78 in `papers/`, 15 in `memory/`,
-1 in `aesir/`, and 1 in `synthesis/`. Branch head at this count: `49f1e1b`
+The corpus holds **130 files** in total (**~5.3 MB** — 5,293,255 bytes of Markdown),
+counted 2026-11-15: 4 at the root, 31 in `runners/`, 78 in `papers/`, 15 in `memory/`,
+1 in `aesir/`, and 1 in `synthesis/`. Branch head at this count: `937076a`
 (`yrsa/research-corpus`).
 Every file is listed exactly once below, under the section where it lives.
 
@@ -18,8 +18,11 @@ Every file is listed exactly once below, under the section where it lives.
 - `00-INDEX.md` — this index: the corpus's front door, its organisation, discipline, and
   maintenance rules.
 - `00-FIELD-MAP.md` — OR-1 field map of model runners, inference engines, and serving
-  systems (Version 3, 2026-11-15; 47 enumerated entries), each with licence, language,
-  backend, and a one-line essence. Living document: the sweep keeps adding finds.
+  systems (Version 4, 2026-11-15; 54 enumerated entries), each with licence, language,
+  backend, and a one-line essence. Living document: the sweep keeps adding finds —
+  sweep #3 added 7 entries (incl. DeepInfer, TokenSpeed, ExLlamaV3, Magnitude),
+  recorded TensorRT-LLM's move to a PyTorch sole backend and Triton's rename to
+  Dynamo-Triton, and marked ExLlamaV2 archived-for-now.
 - `BIBLIOGRAPHY.md` — the living bibliography for the whole corpus: full citations, with
   canonical links, for the papers and systems the dossiers rest on. Merges per wave;
   additions sections now run through wave 31 — sampling & decoding (wave 9), measurement
@@ -32,10 +35,11 @@ Every file is listed exactly once below, under the section where it lives.
   (wave 25), and speculation at long context (wave 26).
 - `MASTER-COMPENDIUM.md` — the distilled state of the art: how LLMs run, and how runners
   make them fast, lean, and truthful. Living document — second draft banked 2026-11-15,
-  with third- and fourth-cut amendments appended 2026-11-15, the third folding batch 4
-  and the fourth folding batches 5–6 into the volume.
+  with third-, fourth- and fifth-cut amendments appended 2026-11-15, the third folding
+  batch 4, the fourth folding batches 5–6, and the fifth folding the eleven deep-dive
+  and wave-27/28/30/31 dossiers into the volume.
 
-### `runners/` — one dossier per runner (30)
+### `runners/` — one dossier per runner (31)
 
 Clean-room dossiers (OR-2): architecture, scheduling, KV design, memory management,
 quantization, kernels, session/prefix handling — in our own words, licence recorded,
@@ -52,6 +56,8 @@ an ideas-to-steal section in each.
   batching, and a blocked KV cache.
 - `runners/exllamav2.md` — ExLlamaV2: the single-user speed specialist — Python
   orchestration over a PyTorch C++/CUDA extension.
+- `runners/exllamav3.md` — ExLlamaV3: the successor volume to the ExLlamaV2 dossier —
+  MIT-licensed; EXL3/QTIP trellis quantisation.
 - `runners/ggml-backend-internals.md` — ggml backend and graph-allocator internals
   (OR-2 deep-dive addendum): how ggml assigns tensors to device buffers, places a
   compute graph's tensors, and pools CUDA/HIP memory — the layer beneath the
@@ -342,8 +348,9 @@ hardware.
   researched as a science in its own right (Version 1, 2026-11-15).
 - `memory/MEMORY-COMPENDIUM.md` — the OR-6 crown volume: the distilled state of the art
   for memory for AI systems, for computers, and for the allocators between them. Living
-  document — second draft banked 2026-11-15, with third- and fourth-cut amendments
-  appended 2026-11-15 folding batches 4–6's memory dossiers into the volume.
+  document — second draft banked 2026-11-15, with third-, fourth- and fifth-cut
+  amendments appended 2026-11-15 folding batches 4–6's memory dossiers and the fifth
+  cut's memory-bearing dossiers into the volume.
 - `memory/agent-memory-architectures.md` — agent memory architectures (dossier A5): what
   persists between sessions, how it is retrieved, and how it is corrected.
 - `memory/allocator-lineages.md` — allocator lineages and designs: the discipline of
@@ -386,8 +393,8 @@ while Ollama is Go, so every idea is translated into Go/Ollama terms.
 
 - `synthesis/IDEA-LEDGER.md` — the ranked idea ledger handed to the Ollama build
   campaign: the cross-corpus ranking, its rejected/deferred list, and its open
-  questions. **FOURTH CUT — 2026-11-15: 53 ranked ideas, 24 rejected/deferred,
-  28 open questions.** Living document: later dossiers and the build campaign's own
+  questions. **FIFTH CUT — 2026-11-15: 56 ranked ideas, 26 rejected/deferred,
+  32 open questions.** Living document: later dossiers and the build campaign's own
   measurements will re-rank it.
 
 ## Discipline
@@ -410,8 +417,8 @@ while Ollama is Go, so every idea is translated into Go/Ollama terms.
 - Corrections are made in place, with a dated note at the point of correction — never
   silently.
 
-*Started 2026-11-15. Status as of 2026-11-15: corpus banked — 129 files (~5.1 MB),
-branch head `49f1e1b`: field maps, 30 runner dossiers, 78 paper dossiers, the 15-file
-memory corpus, the Aesir study, both compendia carrying fourth-cut amendments, the
-idea ledger at its fourth cut (53 ideas / 24 rejected / 28 questions), and waves
-banked through 33.*
+*Started 2026-11-15. Status as of 2026-11-15: corpus banked — 130 files (~5.3 MB),
+branch head `937076a`: field maps, 31 runner dossiers, 78 paper dossiers, the 15-file
+memory corpus, the Aesir study, both compendia carrying fifth-cut amendments, the
+idea ledger at its fifth cut (56 ideas / 26 rejected / 32 questions), and waves
+banked through 33, plus the ExLlamaV3 dossier and field-map sweep #3.*
