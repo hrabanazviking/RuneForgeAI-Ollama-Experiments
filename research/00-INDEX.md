@@ -7,9 +7,9 @@ usable place.
 
 ## How this library is organised
 
-The corpus holds **130 files** in total (**~5.3 MB** — 5,293,255 bytes of Markdown),
-counted 2026-11-15: 4 at the root, 31 in `runners/`, 78 in `papers/`, 15 in `memory/`,
-1 in `aesir/`, and 1 in `synthesis/`. Branch head at this count: `937076a`
+The corpus holds **134 files** in total (**~5.6 MB** — 5,555,980 bytes of Markdown),
+counted 2026-11-15: 4 at the root, 35 in `runners/`, 78 in `papers/`, 15 in `memory/`,
+1 in `aesir/`, and 1 in `synthesis/`. Branch head at this count: `ff98252`
 (`yrsa/research-corpus`).
 Every file is listed exactly once below, under the section where it lives.
 
@@ -39,7 +39,7 @@ Every file is listed exactly once below, under the section where it lives.
   batch 4, the fourth folding batches 5–6, and the fifth folding the eleven deep-dive
   and wave-27/28/30/31 dossiers into the volume.
 
-### `runners/` — one dossier per runner (31)
+### `runners/` — one dossier per runner (35)
 
 Clean-room dossiers (OR-2): architecture, scheduling, KV design, memory management,
 quantization, kernels, session/prefix handling — in our own words, licence recorded,
@@ -50,6 +50,9 @@ an ideas-to-steal section in each.
 - `runners/candle.md` — Candle: Hugging Face's Rust machine-learning framework
   (`candle-core`, `candle-nn`, `candle-transformers`), Rust throughout with optional
   Python bindings.
+- `runners/deepinfer.md` — DeepInfer (DeepSeek): Apache-2.0 — DeepSeek's one-model
+  co-designed engine core, built for exactly one checkpoint; the production
+  disaggregated system it was extracted from is described in detail but not shipped.
 - `runners/deepspeed-fastgen.md` — DeepSpeed-FastGen / DeepSpeed-MII (Microsoft): the
   training library's inference line rebuilt for LLM serving — MII's deployment shell over
   DeepSpeed-Inference kernels, re-scheduled around Dynamic SplitFuse, continuous
@@ -58,6 +61,10 @@ an ideas-to-steal section in each.
   orchestration over a PyTorch C++/CUDA extension.
 - `runners/exllamav3.md` — ExLlamaV3: the successor volume to the ExLlamaV2 dossier —
   MIT-licensed; EXL3/QTIP trellis quantisation.
+- `runners/exllamav3-session-pass.md` — ExLlamaV3 session / prefix pass (OR-2 addendum):
+  closes the V3 dossier's session/prefix questions — chained prefix hash, retention,
+  and tiers: 256-token pages keyed by a chained hash, retained across jobs in VRAM,
+  pinned-memory, and disk tiers.
 - `runners/ggml-backend-internals.md` — ggml backend and graph-allocator internals
   (OR-2 deep-dive addendum): how ggml assigns tensors to device buffers, places a
   compute graph's tensors, and pools CUDA/HIP memory — the layer beneath the
@@ -90,6 +97,10 @@ an ideas-to-steal section in each.
   for running local LLMs.
 - `runners/lmdeploy.md` — LMDeploy: a toolkit for compressing, deploying, and serving
   LLMs and vision-language models, with TurboMind and PyTorch backends.
+- `runners/magnitude.md` — Magnitude: Apache-2.0, Rust — a local agent-serving engine
+  whose kernels are tuned per-hardware at download time, spending up to about a minute
+  on the user's own chip trying configurations and keeping the fastest
+  output-identical one.
 - `runners/mistral-rs.md` — mistral.rs: a Rust inference engine whose Rust crate and
   Python package are both first-class SDKs over the same core.
 - `runners/mlc-llm.md` — MLC-LLM and MLCEngine: the compile-anywhere pole of the MLC /
@@ -117,6 +128,10 @@ an ideas-to-steal section in each.
   vision-language, and diffusion models, with its SRT runtime.
 - `runners/tensorrt-llm.md` — TensorRT-LLM (NVIDIA): the vendor-native, compile-first
   pole of serving.
+- `runners/tokenspeed.md` — TokenSpeed (LightSeek Foundation): MIT — an agentic-serving
+  engine maximising tokens-per-minute per GPU under a per-user speed floor;
+  suspend-by-image retraction and a typed FSM scheduler whose types make unsafe
+  KV reuse unrepresentable.
 - `runners/vllm.md` — vLLM: the serving engine whose name glosses as "virtual LLM" —
   Python engine, scheduler, and API server over C++ / CUDA / Triton kernels.
 
@@ -417,8 +432,9 @@ while Ollama is Go, so every idea is translated into Go/Ollama terms.
 - Corrections are made in place, with a dated note at the point of correction — never
   silently.
 
-*Started 2026-11-15. Status as of 2026-11-15: corpus banked — 130 files (~5.3 MB),
-branch head `937076a`: field maps, 31 runner dossiers, 78 paper dossiers, the 15-file
+*Started 2026-11-15. Status as of 2026-11-15: corpus banked — 134 files (~5.6 MB),
+branch head `ff98252`: field maps, 35 runner dossiers, 78 paper dossiers, the 15-file
 memory corpus, the Aesir study, both compendia carrying fifth-cut amendments, the
 idea ledger at its fifth cut (56 ideas / 26 rejected / 32 questions), and waves
-banked through 33, plus the ExLlamaV3 dossier and field-map sweep #3.*
+banked through 33, plus the sweep-#3-entrant dossiers TokenSpeed/DeepInfer/Magnitude
+and the ExLlamaV3 session pass.*
