@@ -1,0 +1,6 @@
+[Unit]
+Description=OMF health probe (API-level)
+
+[Service]
+Type=oneshot
+ExecStart=/home/volmarr/ollama-memory-forge/bin/omf-health.sh

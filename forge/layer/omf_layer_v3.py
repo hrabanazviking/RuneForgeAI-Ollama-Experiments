@@ -305,4 +305,4 @@ class H(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     sys.stderr.write("OMF layer v3 on 127.0.0.1:%d -> %s (core=%s)\n" % (PORT, UPSTREAM, CORE_MODE))
-    ThreadingHTTPServer(("127.0.0.1", PORT), H).serve_forever()
+    ThreadingHTTPServer((os.environ.get("OMF_BIND", "127.0.0.1"), PORT), H).serve_forever()

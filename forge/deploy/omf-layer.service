@@ -1,0 +1,16 @@
+[Unit]
+Description=OMF forge layer v3 (Anchor Layer, :11500)
+After=omf-scratch.service
+Wants=omf-scratch.service
+
+[Service]
+WorkingDirectory=/home/volmarr/ollama-memory-forge/layer
+ExecStart=/usr/bin/python3 -u omf_layer_v3.py
+Environment="OMF_PORT=11500"
+Environment="OMF_UPSTREAM=http://127.0.0.1:11499"
+Environment="OMF_BIND=127.0.0.1"
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
