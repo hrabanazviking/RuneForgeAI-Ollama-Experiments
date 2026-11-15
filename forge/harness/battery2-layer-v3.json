@@ -1,6 +1,6 @@
 {
  "label": "layer-v3",
- "base": "http://127.0.0.1:11500",
+ "base": "http://127.0.0.1:11501",
  "model": "gemma4viking4b:latest",
  "scenarios": {
   "control": {
@@ -8,42 +8,42 @@
     {
      "turn": 1,
      "prompt_eval_count": 339,
-     "wall_s": 11.49
+     "wall_s": 8.24
     },
     {
      "turn": 2,
      "prompt_eval_count": 499,
-     "wall_s": 9.42
+     "wall_s": 10.16
     },
     {
      "turn": 3,
      "prompt_eval_count": 659,
-     "wall_s": 11.81
+     "wall_s": 12.21
     },
     {
      "turn": 4,
      "prompt_eval_count": 819,
-     "wall_s": 6.88
+     "wall_s": 7.64
     },
     {
      "turn": 5,
      "prompt_eval_count": 979,
-     "wall_s": 6.82
+     "wall_s": 7.71
     },
     {
      "turn": 6,
      "prompt_eval_count": 1139,
-     "wall_s": 6.91
+     "wall_s": 7.73
     },
     {
      "turn": 7,
      "prompt_eval_count": 1299,
-     "wall_s": 7.01
+     "wall_s": 7.83
     },
     {
      "turn": 8,
      "prompt_eval_count": 1459,
-     "wall_s": 6.99
+     "wall_s": 7.87
     }
    ],
    "probes": [
@@ -149,62 +149,62 @@
     {
      "turn": 1,
      "prompt_eval_count": 339,
-     "wall_s": 12.29
+     "wall_s": 12.5
     },
     {
      "turn": 2,
      "prompt_eval_count": 499,
-     "wall_s": 9.95
+     "wall_s": 10.37
     },
     {
      "turn": 3,
      "prompt_eval_count": 659,
-     "wall_s": 11.94
+     "wall_s": 12.34
     },
     {
      "turn": 4,
-     "prompt_eval_count": 728,
-     "wall_s": 13.43
+     "prompt_eval_count": 569,
+     "wall_s": 11.21
     },
     {
      "turn": 5,
-     "prompt_eval_count": 728,
-     "wall_s": 12.95
+     "prompt_eval_count": 504,
+     "wall_s": 10.03
     },
     {
      "turn": 6,
-     "prompt_eval_count": 728,
-     "wall_s": 13.29
+     "prompt_eval_count": 504,
+     "wall_s": 9.88
     },
     {
      "turn": 7,
-     "prompt_eval_count": 728,
-     "wall_s": 13.78
+     "prompt_eval_count": 504,
+     "wall_s": 9.83
     },
     {
      "turn": 8,
-     "prompt_eval_count": 728,
-     "wall_s": 13.27
+     "prompt_eval_count": 504,
+     "wall_s": 9.88
     },
     {
      "turn": 9,
-     "prompt_eval_count": 728,
-     "wall_s": 13.37
+     "prompt_eval_count": 526,
+     "wall_s": 10.2
     },
     {
      "turn": 10,
-     "prompt_eval_count": 729,
-     "wall_s": 13.73
+     "prompt_eval_count": 527,
+     "wall_s": 10.21
     },
     {
      "turn": 11,
-     "prompt_eval_count": 730,
-     "wall_s": 13.23
+     "prompt_eval_count": 528,
+     "wall_s": 10.19
     },
     {
      "turn": 12,
-     "prompt_eval_count": 731,
-     "wall_s": 13.42
+     "prompt_eval_count": 528,
+     "wall_s": 10.29
     }
    ],
    "probes": [
@@ -256,37 +256,37 @@
     {
      "group": "H",
      "fact": "brother",
-     "verdict": "wrong",
+     "verdict": "correct",
      "per_phrasing": [
-      "wrong",
-      "wrong"
+      "correct",
+      "correct"
      ]
     },
     {
      "group": "H",
      "fact": "dog",
-     "verdict": "wrong",
+     "verdict": "correct",
      "per_phrasing": [
-      "wrong",
-      "wrong"
+      "correct",
+      "correct"
      ]
     },
     {
      "group": "H",
      "fact": "mother",
-     "verdict": "wrong",
+     "verdict": "correct",
      "per_phrasing": [
-      "wrong",
-      "wrong"
+      "correct",
+      "correct"
      ]
     },
     {
      "group": "H",
      "fact": "promise",
-     "verdict": "wrong",
+     "verdict": "correct",
      "per_phrasing": [
-      "wrong",
-      "wrong"
+      "correct",
+      "correct"
      ]
     }
    ],
@@ -298,8 +298,8 @@
      "of": 5
     },
     "H": {
-     "correct": 0,
-     "wrong": 4,
+     "correct": 4,
+     "wrong": 0,
      "empty": 0,
      "of": 4
     }

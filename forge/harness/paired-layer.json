@@ -1,0 +1,46 @@
+{
+ "label": "layer",
+ "base": "http://127.0.0.1:11501",
+ "model": "gemma4viking4b:latest",
+ "session": true,
+ "paired": {
+  "warm_eval": 700,
+  "noedit_eval": 700,
+  "rewarm_eval": 700,
+  "frontedit_eval": 789
+ },
+ "dynfront": [
+  {
+   "turn": 1,
+   "prompt_eval_count": 609,
+   "wall_s": 8.32
+  },
+  {
+   "turn": 2,
+   "prompt_eval_count": 730,
+   "wall_s": 9.91
+  },
+  {
+   "turn": 3,
+   "prompt_eval_count": 851,
+   "wall_s": 5.35
+  }
+ ],
+ "dyntail": [
+  {
+   "turn": 1,
+   "prompt_eval_count": 597,
+   "wall_s": 8.24
+  },
+  {
+   "turn": 2,
+   "prompt_eval_count": 718,
+   "wall_s": 9.67
+  },
+  {
+   "turn": 3,
+   "prompt_eval_count": 839,
+   "wall_s": 5.24
+  }
+ ]
+}

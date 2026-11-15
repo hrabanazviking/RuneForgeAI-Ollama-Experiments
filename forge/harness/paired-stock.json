@@ -1,0 +1,46 @@
+{
+ "label": "stock",
+ "base": "http://127.0.0.1:11499",
+ "model": "gemma4viking4b:latest",
+ "session": false,
+ "paired": {
+  "warm_eval": 632,
+  "noedit_eval": 632,
+  "rewarm_eval": 632,
+  "frontedit_eval": 633
+ },
+ "dynfront": [
+  {
+   "turn": 1,
+   "prompt_eval_count": 529,
+   "wall_s": 7.12
+  },
+  {
+   "turn": 2,
+   "prompt_eval_count": 650,
+   "wall_s": 8.61
+  },
+  {
+   "turn": 3,
+   "prompt_eval_count": 771,
+   "wall_s": 10.1
+  }
+ ],
+ "dyntail": [
+  {
+   "turn": 1,
+   "prompt_eval_count": 529,
+   "wall_s": 7.22
+  },
+  {
+   "turn": 2,
+   "prompt_eval_count": 650,
+   "wall_s": 8.7
+  },
+  {
+   "turn": 3,
+   "prompt_eval_count": 771,
+   "wall_s": 4.33
+  }
+ ]
+}
