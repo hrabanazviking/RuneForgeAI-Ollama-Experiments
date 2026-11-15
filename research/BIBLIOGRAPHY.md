@@ -33,6 +33,11 @@ record (arXiv / venue / publisher).*
 - Shah, J., Bikshandi, G., Zhang, Y., Thakkar, V., Ramani, P., & Dao, T. (2024). *FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision.* NeurIPS 37. arXiv:2407.08608. https://arxiv.org/abs/2407.08608 — Hopper-only: warp-specialised async + FP8 with block quantisation and incoherent processing; ~1.2 PFLOPs/s FP8 on H100. No runnable kernel for Turing — precision lessons only. Dossier: `papers/flashattention-3.md`.
 - Ye, Z., Chen, L., Lai, R., Lin, W., Zhang, Y., Wang, S., Chen, T., Kasikci, B., Grover, V., Krishnamurthy, A., & Ceze, L. (2025). *FlashInfer: Efficient and Customizable Attention Engine for LLM Inference Serving.* MLSys 2025. arXiv:2501.01005. https://arxiv.org/abs/2501.01005 — the lineage as serving infrastructure: unified block-sparse KV layouts, JIT kernel templates from Turing (sm75) to Hopper, plan/run scheduler; inside SGLang, vLLM, MLC-Engine. Dossier: `papers/flashinfer.md`.
 
+### Mixture-of-experts (wave 6)
+
+- Jiang, A. Q., et al. (2024). *Mixtral of Experts.* arXiv technical report. arXiv:2401.04088. https://arxiv.org/abs/2401.04088 — 8 experts, top-2 routing: 46.7B total / 12.9B active per token; memory cost follows the total count while compute follows the active count; the paper specifies no load-balancing loss and no serving measurements. Dossier: `papers/mixtral.md`.
+- Xue, L., Fu, Y., Lu, Z., Sun, C., Mai, L., & Marina, M. (2025). *MoE-Infinity: Efficient MoE Inference on Personal Machines with Sparsity-Aware Expert Cache.* arXiv:2401.14361 (v3, 12 March 2025). https://arxiv.org/abs/2401.14361 — expert reuse is skewed within a request but uniform across requests, so the GPU expert cache is driven by request-level activation traces; 3.1–16.7× per-token latency improvements on a single A5000-24GB (v3 abstract figures; its conclusion reports 2.7–13.7× — both recorded in the dossier). Dossier: `papers/moe-infinity.md`.
+
 ### Weight quantization (wave 5)
 
 - Frantar, E., Ashkboos, S., Hoefler, T., & Alistarh, D. (2023). *GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers.* ICLR 2023. arXiv:2210.17323. https://arxiv.org/abs/2210.17323 — one-shot layer-wise quantization with Hessian error compensation (Cholesky-reformulated); 175B to 3–4 bits in ~4 GPU-hours, near-FP16 perplexity at 4 bits. Dossier: `papers/gptq.md`.
