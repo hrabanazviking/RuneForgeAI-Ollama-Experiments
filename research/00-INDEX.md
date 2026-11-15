@@ -7,9 +7,9 @@ usable place.
 
 ## How this library is organised
 
-The corpus holds **134 files** in total (**~5.6 MB** — 5,555,980 bytes of Markdown),
+The corpus holds **134 files** in total (**~5.6 MB** — 5,640,721 bytes of Markdown),
 counted 2026-11-15: 4 at the root, 35 in `runners/`, 78 in `papers/`, 15 in `memory/`,
-1 in `aesir/`, and 1 in `synthesis/`. Branch head at this count: `ff98252`
+1 in `aesir/`, and 1 in `synthesis/`. Branch head at this count: `6ac985f`
 (`yrsa/research-corpus`).
 Every file is listed exactly once below, under the section where it lives.
 
@@ -35,9 +35,10 @@ Every file is listed exactly once below, under the section where it lives.
   (wave 25), and speculation at long context (wave 26).
 - `MASTER-COMPENDIUM.md` — the distilled state of the art: how LLMs run, and how runners
   make them fast, lean, and truthful. Living document — second draft banked 2026-11-15,
-  with third-, fourth- and fifth-cut amendments appended 2026-11-15, the third folding
-  batch 4, the fourth folding batches 5–6, and the fifth folding the eleven deep-dive
-  and wave-27/28/30/31 dossiers into the volume.
+  with third-, fourth-, fifth- and sixth-cut amendments appended 2026-11-15, the third
+  folding batch 4, the fourth folding batches 5–6, the fifth folding the eleven deep-dive
+  and wave-27/28/30/31 dossiers, and the sixth folding the five runner dossiers banked
+  since the fifth cut and field map v4 (54 entries, sweep #3) into the volume.
 
 ### `runners/` — one dossier per runner (35)
 
@@ -363,9 +364,10 @@ hardware.
   researched as a science in its own right (Version 1, 2026-11-15).
 - `memory/MEMORY-COMPENDIUM.md` — the OR-6 crown volume: the distilled state of the art
   for memory for AI systems, for computers, and for the allocators between them. Living
-  document — second draft banked 2026-11-15, with third-, fourth- and fifth-cut
-  amendments appended 2026-11-15 folding batches 4–6's memory dossiers and the fifth
-  cut's memory-bearing dossiers into the volume.
+  document — second draft banked 2026-11-15, with third-, fourth-, fifth- and sixth-cut
+  amendments appended 2026-11-15 folding batches 4–6's memory dossiers, the fifth
+  cut's memory-bearing dossiers, and the sixth cut's memory-bearing dossiers into the
+  volume.
 - `memory/agent-memory-architectures.md` — agent memory architectures (dossier A5): what
   persists between sessions, how it is retrieved, and how it is corrected.
 - `memory/allocator-lineages.md` — allocator lineages and designs: the discipline of
@@ -408,8 +410,10 @@ while Ollama is Go, so every idea is translated into Go/Ollama terms.
 
 - `synthesis/IDEA-LEDGER.md` — the ranked idea ledger handed to the Ollama build
   campaign: the cross-corpus ranking, its rejected/deferred list, and its open
-  questions. **FIFTH CUT — 2026-11-15: 56 ranked ideas, 26 rejected/deferred,
-  32 open questions.** Living document: later dossiers and the build campaign's own
+  questions. **SIXTH CUT — 2026-11-15: 59 ranked ideas, 29 rejected/deferred,
+  35 open questions.** New entries #57 (suspend-by-image), #58 (typed scheduler
+  ownership), and #59 (single-flight shared prefill); the top five stand a fifth
+  time. Living document: later dossiers and the build campaign's own
   measurements will re-rank it.
 
 ## Discipline
@@ -433,8 +437,8 @@ while Ollama is Go, so every idea is translated into Go/Ollama terms.
   silently.
 
 *Started 2026-11-15. Status as of 2026-11-15: corpus banked — 134 files (~5.6 MB),
-branch head `ff98252`: field maps, 35 runner dossiers, 78 paper dossiers, the 15-file
-memory corpus, the Aesir study, both compendia carrying fifth-cut amendments, the
-idea ledger at its fifth cut (56 ideas / 26 rejected / 32 questions), and waves
+branch head `6ac985f`: field maps, 35 runner dossiers, 78 paper dossiers, the 15-file
+memory corpus, the Aesir study, both compendia carrying sixth-cut amendments, the
+idea ledger at its sixth cut (59 ideas / 29 rejected / 35 questions), and waves
 banked through 33, plus the sweep-#3-entrant dossiers TokenSpeed/DeepInfer/Magnitude
 and the ExLlamaV3 session pass.*
