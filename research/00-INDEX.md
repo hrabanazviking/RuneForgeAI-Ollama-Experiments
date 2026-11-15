@@ -7,9 +7,9 @@ usable place.
 
 ## How this library is organised
 
-The corpus holds **118 files** in total (**~4.8 MB** — 4,737,620 bytes of Markdown),
-counted 2026-11-15: 4 at the root, 27 in `runners/`, 70 in `papers/`, 15 in `memory/`,
-1 in `aesir/`, and 1 in `synthesis/`. Branch head at this count: `0245fd3`
+The corpus holds **129 files** in total (**~5.1 MB** — 5,105,460 bytes of Markdown),
+counted 2026-11-15: 4 at the root, 30 in `runners/`, 78 in `papers/`, 15 in `memory/`,
+1 in `aesir/`, and 1 in `synthesis/`. Branch head at this count: `49f1e1b`
 (`yrsa/research-corpus`).
 Every file is listed exactly once below, under the section where it lives.
 
@@ -22,7 +22,7 @@ Every file is listed exactly once below, under the section where it lives.
   backend, and a one-line essence. Living document: the sweep keeps adding finds.
 - `BIBLIOGRAPHY.md` — the living bibliography for the whole corpus: full citations, with
   canonical links, for the papers and systems the dossiers rest on. Merges per wave;
-  additions sections now run through wave 26 — sampling & decoding (wave 9), measurement
+  additions sections now run through wave 31 — sampling & decoding (wave 9), measurement
   methodology (wave 10), disaggregation & migration (wave 11), energy & efficiency
   (wave 12), speculative decoding II (wave 13), agent-memory ancestors (wave 14),
   KV in motion (wave 15), the rotation lineage (wave 16), sparse attention (wave 17),
@@ -35,7 +35,7 @@ Every file is listed exactly once below, under the section where it lives.
   with third- and fourth-cut amendments appended 2026-11-15, the third folding batch 4
   and the fourth folding batches 5–6 into the volume.
 
-### `runners/` — one dossier per runner (27)
+### `runners/` — one dossier per runner (30)
 
 Clean-room dossiers (OR-2): architecture, scheduling, KV design, memory management,
 quantization, kernels, session/prefix handling — in our own words, licence recorded,
@@ -52,6 +52,10 @@ an ideas-to-steal section in each.
   batching, and a blocked KV cache.
 - `runners/exllamav2.md` — ExLlamaV2: the single-user speed specialist — Python
   orchestration over a PyTorch C++/CUDA extension.
+- `runners/ggml-backend-internals.md` — ggml backend and graph-allocator internals
+  (OR-2 deep-dive addendum): how ggml assigns tensors to device buffers, places a
+  compute graph's tensors, and pools CUDA/HIP memory — the layer beneath the
+  llama.cpp / ggml dossier.
 - `runners/gpt4all.md` — GPT4All (Nomic AI): desktop application, embeddable inference
   library, and language bindings for running LLMs locally.
 - `runners/ipex-llm.md` — Intel IPEX-LLM: Intel's LLM library for PyTorch, descended
@@ -64,6 +68,9 @@ an ideas-to-steal section in each.
   `lemonade` command, implemented in C++.
 - `runners/llamacpp-ggml.md` — llama.cpp / ggml: the gravity well of local inference —
   the inference engine and its tensor library together.
+- `runners/llamacpp-kv-internals.md` — llama.cpp KV-cache and slot internals (OR-2
+  deep-dive addendum): how the KV cache is organised, how sequences share it, and how
+  llama-server's slots sit on top of it — companion to the llama.cpp / ggml dossier.
 - `runners/llamacpp-server-ecosystem.md` — the server frontends, proxies, routers, and
   packaged distributions that grew around `llama-server` and the ggml core — not the core
   itself.
@@ -88,6 +95,9 @@ an ideas-to-steal section in each.
   worker processes wrapping vLLM, SGLang, or TensorRT-LLM, a planner that resizes
   prefill and decode pools against latency targets, and the NIXL transfer library
   moving KV cache between workers and memory tiers.
+- `runners/ollama-internals.md` — Ollama internals (OR-2 deep-dive addendum):
+  scheduling, memory estimation, and context handling read from Ollama's own source —
+  the deep companion to the Ollama dossier.
 - `runners/ollama.md` — Ollama itself: the deep dossier at the centre of our work,
   written for the engineer of an improved Ollama fork.
 - `runners/onnx-runtime-genai.md` — ONNX Runtime GenAI (ORT GenAI): Microsoft's
@@ -104,7 +114,7 @@ an ideas-to-steal section in each.
 - `runners/vllm.md` — vLLM: the serving engine whose name glosses as "virtual LLM" —
   Python engine, scheduler, and API server over C++ / CUDA / Triton kernels.
 
-### `papers/` — one dossier per research paper (70)
+### `papers/` — one dossier per research paper (78)
 
 Paper dossiers (OR-3): full citation, the core idea in our own words, the paper's measured
 claims **as reported** (with their hardware context), and applicability notes for
@@ -115,6 +125,10 @@ Ollama-on-a-6 GB-GPU and for Project Aesir.
   the top outlier activation channels, profiled on calibration data, to INT8.
 - `papers/awq.md` — AWQ: activation-aware weight quantization for LLM compression and
   acceleration.
+- `papers/burstgpt.md` — BurstGPT: a real-world workload dataset to optimize LLM
+  serving systems — request-level traces from a production Azure OpenAI service
+  (arrivals, request/response lengths, failures), showing real LLM traffic is bursty
+  and time-varying in ways synthetic workloads miss.
 - `papers/cacheblend.md` — CacheBlend: fast LLM serving for RAG with cached knowledge
   fusion, reusing precomputed KV for chunks in any position.
 - `papers/cachegen.md` — CacheGen: KV cache compression and streaming for fast LLM
@@ -130,12 +144,18 @@ Ollama-on-a-6 GB-GPU and for Project Aesir.
 - `papers/dola.md` — DoLa: decoding by contrasting layers improves factuality in large
   language models — the final layer's distribution contrasted against an earlier,
   premature layer's, both read through the same vocabulary head; no extra model.
+- `papers/duoattention.md` — DuoAttention: efficient long-context LLM inference with
+  retrieval and streaming heads — only retrieval heads keep the full KV cache, while
+  streaming heads keep attention sinks plus a recent window, cutting KV memory.
 - `papers/eagle-2.md` — EAGLE-2: faster inference with dynamic draft trees — EAGLE's
   feature-level drafting restructured per step into a context-aware tree, expanded and
   pruned by confidence.
 - `papers/eagle-3.md` — EAGLE-3: scaling up inference acceleration via training-time test.
 - `papers/eagle.md` — EAGLE: speculative sampling by predicting the target's next
   feature rather than its next token.
+- `papers/fastserve.md` — FastServe: fast distributed inference serving for large
+  language models — token-level preemptive scheduling with a skip-join multi-level
+  feedback queue, plus proactive KV-cache swapping so preemption stays affordable.
 - `papers/flashattention.md` — FlashAttention: fast, memory-efficient exact attention
   with IO-awareness.
 - `papers/flashattention-2.md` — FlashAttention-2: faster attention with better
@@ -156,6 +176,9 @@ Ollama-on-a-6 GB-GPU and for Project Aesir.
 - `papers/infbench.md` — ∞Bench: extending long context evaluation beyond 100K tokens —
   12 tasks across retrieval, code, math, novels, and dialogue, with average data length
   surpassing 100K tokens.
+- `papers/infini-attention.md` — Infini-attention: Leave No Context Behind — efficient
+  infinite-context transformers pairing masked local attention with a compressive
+  long-term memory, so context grows without bound inside a bounded memory budget.
 - `papers/infinigen.md` — InfiniGen: efficient generative inference with dynamic KV
   cache management — the whole KV cache lives in CPU memory, and each layer's needed
   entries are predicted by a cheap rehearsal on the previous layer's input and
@@ -195,6 +218,10 @@ Ollama-on-a-6 GB-GPU and for Project Aesir.
   generated text's observed surprise at a user-set target.
 - `papers/mixtral.md` — Mixtral of Experts: the Mixtral 8×7B sparse mixture-of-experts
   language model.
+- `papers/mixture-of-depths.md` — Mixture-of-Depths: dynamically allocating compute
+  in transformer-based language models — a router passes only a capacity-limited
+  subset of tokens through each block, the rest travelling the residual path, so
+  compute is allocated per token by depth.
 - `papers/mlperf-inference.md` — MLPerf Inference: the benchmark's scenarios,
   tail-latency rules, and anti-gaming machinery — the corpus's measurement-methodology
   anchor: no number without its conditions.
@@ -208,6 +235,10 @@ Ollama-on-a-6 GB-GPU and for Project Aesir.
   and natively trainable sparse attention — three gated parallel branches (compression,
   selection, sliding window) with independent keys and values; an architecture a model
   is trained with, not a serving retrofit.
+- `papers/ntk-aware-scaling.md` — NTK-aware scaling: a lineage dossier (community
+  origin — bloc97, with emozilla's Dynamic NTK; no paper) — RoPE context extension by
+  raising the base so high-frequency dimensions extrapolate while low-frequency
+  dimensions interpolate, formalised inside YaRN.
 - `papers/online-speculative-decoding.md` — Online Speculative Decoding: adapting the
   draft model to live query traffic.
 - `papers/orca.md` — Orca: a distributed serving system for transformer-based generative
@@ -218,6 +249,10 @@ Ollama-on-a-6 GB-GPU and for Project Aesir.
   indexed in advance rather than rescanned at every step.
 - `papers/pagedattention-vllm.md` — PagedAttention: efficient memory management for LLM
   serving, managing the KV cache as OS-style paged memory (the vLLM paper).
+- `papers/position-interpolation.md` — Position Interpolation: extending context
+  window of large language models via positional interpolation — RoPE position
+  indices rescaled by L/L′ so longer sequences stay inside the trained angle range,
+  extended with only brief fine-tuning.
 - `papers/power-hungry-processing.md` — Power Hungry Processing: watts driving the cost
   of AI deployment? — measured energy and carbon costs of inference across tasks and
   model sizes.
@@ -278,6 +313,9 @@ Ollama-on-a-6 GB-GPU and for Project Aesir.
   splitting of prefill and decode.
 - `papers/streamingllm.md` — StreamingLLM: efficient streaming language models with
   attention sinks.
+- `papers/titans.md` — Titans: learning to memorize at test time — a neural long-term
+  memory module that learns from the sequence itself during inference, paired with
+  short-term attention, for very long contexts.
 - `papers/triforce.md` — TriForce: lossless acceleration of long sequence generation
   with hierarchical speculative decoding — the target model drafts for itself against
   a small retrieved subset of its KV cache, and a small draft model drafts for that
@@ -372,8 +410,8 @@ while Ollama is Go, so every idea is translated into Go/Ollama terms.
 - Corrections are made in place, with a dated note at the point of correction — never
   silently.
 
-*Started 2026-11-15. Status as of 2026-11-15: corpus banked — 118 files (~4.8 MB),
-branch head `0245fd3`: field maps, 27 runner dossiers, 70 paper dossiers, the 15-file
+*Started 2026-11-15. Status as of 2026-11-15: corpus banked — 129 files (~5.1 MB),
+branch head `49f1e1b`: field maps, 30 runner dossiers, 78 paper dossiers, the 15-file
 memory corpus, the Aesir study, both compendia carrying fourth-cut amendments, the
 idea ledger at its fourth cut (53 ideas / 24 rejected / 28 questions), and waves
-banked through 26.*
+banked through 33.*
